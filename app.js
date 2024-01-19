@@ -13,18 +13,22 @@ class Casino {
     playGame(betAmount) {
 
 let coinToss = Math.random()
-this.timesPlayed += 1;
+this.timesPlayed++
+let purse = betAmount * (++this.timesPlayed +1)
+
 if (coinToss <= .5) {
     console.log(this.name, 'wins.')
+    console.log('lost', purse)
+    this.winnings -= purse
 } else {
     console.log('You win.')
+    console.log('won', purse)
     this.winnings = betAmount * (++this.timesPlayed +1)
 }
-
-
-
-
-    }
+}
+cashOut(){
+    console.log("You total after cashing out is", this.winnings)
+}
 };
 
 // TESTS
