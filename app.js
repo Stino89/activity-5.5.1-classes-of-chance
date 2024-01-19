@@ -23,8 +23,7 @@ if (coinToss <= .5) {
 } else {
     console.log('You win.')
     console.log('won', purse)
-    this.winnings = betAmount * (++this.timesPlayed +1)
-}
+    this.winnings += purse
 }
 cashOut(){
     console.log("You total after cashing out is", this.winnings)
